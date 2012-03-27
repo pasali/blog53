@@ -5,10 +5,17 @@ gem 'rails', '3.2.2'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+group :test do
+gem 'webrat', '0.7.1'
+gem 'capybara', '1.0.0.beta1'
+end
+
 group :production, :staging do
   gem "pg"
 end
-
+group :test, :development do
+  gem "rspec-rails", "~> 2.6"
+end
 group :development, :test do
   gem "sqlite3-ruby", :require => "sqlite3"
 end
