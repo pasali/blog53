@@ -1,3 +1,4 @@
+#encoding : utf-8
 require 'spec_helper'
 
 describe "Static pages" do
@@ -15,21 +16,21 @@ describe "Static pages" do
   describe "Help page" do
     before { visit help_path }
 
-    it { should have_selector('h1',    text: 'Help') }
-    it { should have_selector('title', text: full_title('Help')) }
+    it { should have_selector('h1',    text: 'Yardım') }
+    it { should have_selector('title', text: full_title('Yardım')) }
   end
 
   describe "About page" do
     before { visit about_path }
 
-    it { should have_selector('h1',    text: 'About') }
-    it { should have_selector('title', text: full_title('About Us')) }
+    it { should have_selector('h1',    text: 'Hakkında') }
+    it { should have_selector('title', text: full_title('Hakkımızda')) }
   end
 
   describe "Contact page" do
     before { visit contact_path }
 
-    it { should have_selector('h1',    text: 'Contact') }
-    it { should have_selector('title', text: full_title('Contact')) }
+    it { should have_selector('h1',    text: 'İletişim') }
+    it { should have_selector('title', text: full_title('İletişim')) }
   end
 end
