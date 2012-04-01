@@ -1,7 +1,11 @@
 Blog::Application.routes.draw do
+  resources :articles
+
+  devise_for :users
+
   get "users/new"
 
-  root to: 'static_pages#home'
+  root to: 'articles#index'
   match '/signup',  to: 'users#new'
   match '/', to: 'static_pages#home'
   match '/help',    to: 'static_pages#help'

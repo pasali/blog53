@@ -3,7 +3,11 @@
 <footer class="footer">
   
   <nav>
-    <ul>
+  <% if user_signed_in? %>
+      Hi, you are signed in with <%= current_user.email %> |
+        <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+      <% end %>
+  <ul>
       <li><%= link_to "Hakkımızda",   about_path %></li>
       <li><%= link_to "İletişim", contact_path %></li>
     </ul>
